@@ -51,7 +51,7 @@ http://www.ituring.com.cn/article/66566
 4. 如果 x 不是对象也不是函数，则以x为值 fulfill promise。  
 
 ### 链式调用
-> ![promise 链式调用][]
+> ![promise 链式调用][3]
 
 ### 作用
 > 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
