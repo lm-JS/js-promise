@@ -13,17 +13,23 @@
 * reason 是一个用于描述Promise被拒绝原因的值。
 
 ###  Promise状态
-> 一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.  
+> 一个Promise必须处在其中之一的状态：pending（初始状态）, fulfilled（成功的操作） 或 rejected（失败的操作）.  
   *1. 如果是pending状态,则promise：*  
-       　可以转换到fulfilled或rejected状态。  
+　　　　可以转换到fulfilled或rejected状态。  
   *2. 如果是fulfilled状态,则promise：*  
-      　　不能转换成任何其它状态。  
-    　　　　必须有一个值，且这个值不能被改变。  
+    　　　不能转换成任何其它状态。  
+    　　　必须有一个值，且这个值不能被改变。  
   *3. 如果是rejected状态,则promise可以：*  
     　　　不能转换成任何其它状态。  
     　　　必须有一个原因，且这个值不能被改变。  
-”值不能被改变”指的是其identity不能被改变，而不是指其成员内容不能被改变。
+”值不能被改变”指的是其identity（引用）不能被改变，而不是指其成员内容不能被改变。
 
+### then方法
+　　一个Promise必须提供一个then方法来获取其值或原因。
+> promise.then(onFulfilled, onRejected)　　
+　　1. 它必须在promise fulfilled或rejected后调用， 且promise的value或reason为其第一个参数。
+　　2. 它不能在promise fulfilled或rejected前调用。
+　　3. 不能被多次调用。
 
 ### 作用
 > 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
