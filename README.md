@@ -33,7 +33,7 @@ http://www.ituring.com.cn/article/66566
 　　2. 它不能在promise fulfilled或rejected前调用。  
 　　3. 不能被多次调用。  
 
-#Promise解析过程 
+### Promise解析过程 
 　Promise解析过程 是以一个promise和一个值做为参数的抽象过程，可表示为[[Resolve]](promise, x). 过程如下：
 > 1. 如果promise 和 x 指向相同的值, 使用 TypeError做为原因将promise拒绝。
 2. 如果 x 是一个promise, 采用其状态  
@@ -50,11 +50,16 @@ http://www.ituring.com.cn/article/66566
 　　如果 then不是一个函数，则 以x为值fulfill promise。  
 4. 如果 x 不是对象也不是函数，则以x为值 fulfill promise。  
 
+### 链式调用
+> ![promise 链式调用][]
+
 ### 作用
 > 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
 2. 解决了异步函数中实现同步的特征，它能够实现函数的返回与异常的抛出（冒泡直到被捕获）。
 
 ### 应用场景
+
+
 
 
   
@@ -82,3 +87,4 @@ http://www.ituring.com.cn/article/66566
 
 [1]: https://segmentfault.com/a/1190000000684654#articleHeader1
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[3]: https://github.com/lm-JS/js-promise/kk.png
