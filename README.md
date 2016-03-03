@@ -1,8 +1,10 @@
 # js-promise
 
 ### Promise/A+规范
-> Promise表示一个异步操作的最终结果。主要用于延迟(deferred) 计算和异步(asynchronous ) 计算.。一个Promise对象代表着一个还未完成，但预期将来会完成的操作。（[es6定义][2]）与Promise最主要的交互方法是通过将函数传入它的then方法从而获取得Promise最终的值或Promise最终最拒绝（reject）的原因。
-
+> Promise表示一个异步操作的最终结果。主要用于延迟(deferred) 计算和异步(asynchronous ) 计算.。一个Promise对象代表着一个还未完成，但预期将来会完成的操作。（[es6定义][2]）与Promise最主要的交互方法是通过将函数传入它的then方法从而获取得Promise最终的值或Promise最终最拒绝（reject）的原因。  
+参考：  
+https://segmentfault.com/a/1190000002452115  
+http://www.ituring.com.cn/article/66566  
 
 
 ### 术语
