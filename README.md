@@ -14,12 +14,12 @@
 
 ###  Promise状态
 > 一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.  
-  *如果是pending状态,则promise：*  
+  *1. 如果是pending状态,则promise：*  
    可以转换到fulfilled或rejected状态。  
-  *如果是fulfilled状态,则promise：*  
+  *2. 如果是fulfilled状态,则promise：*  
     不能转换成任何其它状态。  
     必须有一个值，且这个值不能被改变。  
-  *如果是rejected状态,则promise可以：*  
+  *3. 如果是rejected状态,则promise可以：*  
     不能转换成任何其它状态。  
     必须有一个原因，且这个值不能被改变。  
 ”值不能被改变”指的是其identity不能被改变，而不是指其成员内容不能被改变。
