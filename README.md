@@ -26,10 +26,10 @@
 
 ### then方法
 　　一个Promise必须提供一个then方法来获取其值或原因。
-> promise.then(onFulfilled, onRejected)　　
-　　1. 它必须在promise fulfilled或rejected后调用， 且promise的value或reason为其第一个参数。
-　　2. 它不能在promise fulfilled或rejected前调用。
-　　3. 不能被多次调用。
+> promise.then(onFulfilled, onRejected)  　　
+　　1. 它必须在promise fulfilled或rejected后调用， 且promise的value或reason为其第一个参数。  
+　　2. 它不能在promise fulfilled或rejected前调用。  
+　　3. 不能被多次调用。  
 
 ### 作用
 > 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
