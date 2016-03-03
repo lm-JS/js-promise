@@ -1,14 +1,44 @@
-[TOC]
 # js-promise
 
-###what
-> Promise是CommonJS的规范之一，拥有resolve、reject、done、fail、then等方法，能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]。jQuery等流行的js库都已经实现了这个对象，年底即将发布的ES6也将原生实现Promise
+### Promise/A+规范
+> Promise表示一个异步操作的最终结果。主要用于延迟(deferred) 计算和异步(asynchronous ) 计算.。一个Promise对象代表着一个还未完成，但预期将来会完成的操作。（[es6定义][2]）与Promise最主要的交互方法是通过将函数传入它的then方法从而获取得Promise最终的值或Promise最终最拒绝（reject）的原因。
 
-###同步函数最重要的两个特征
-> 1. 能够返回值
-2. 能够抛出异常
 
- >Promise 模式解决了异步函数中实现同步的特征，它能够实现函数的返回与异常的抛出（冒泡直到被捕获）。  
+
+### 术语
+> * promise是一个包含了兼容promise规范then方法的对象或函数，
+* thenable 是一个包含了then方法的对象或函数。
+* value 是任何Javascript值。 (包括 undefined, thenable, promise等).
+* exception 是由throw表达式抛出来的值。
+* reason 是一个用于描述Promise被拒绝原因的值。
+
+###  Promise状态
+> 一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.  
+  *如果是pending状态,则promise：*  
+   可以转换到fulfilled或rejected状态。  
+  *如果是fulfilled状态,则promise：*  
+    不能转换成任何其它状态。  
+    必须有一个值，且这个值不能被改变。  
+  *如果是rejected状态,则promise可以：*  
+    不能转换成任何其它状态。  
+    必须有一个原因，且这个值不能被改变。  
+”值不能被改变”指的是其identity不能被改变，而不是指其成员内容不能被改变。
+
+
+### 作用
+> 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
+  2. 解决了异步函数中实现同步的特征，它能够实现函数的返回与异常的抛出（冒泡直到被捕获）。
+
+### 应用场景
+
+
+  
+### 其他实现promise框架
+> Query等流行的js库都已经实现了这个对象，ES6原生实现Promise
+
+
+
+ >Promise 模式  
    *符合 Promise 模式的函数必须返回一个 promise。*  
    参考：https://segmentfault.com/a/1190000000767545
 
@@ -26,3 +56,4 @@
 
 
 [1]: https://segmentfault.com/a/1190000000684654#articleHeader1
+[2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
