@@ -31,6 +31,23 @@
 　　2. 它不能在promise fulfilled或rejected前调用。  
 　　3. 不能被多次调用。  
 
+#Promise解析过程 
+　Promise解析过程 是以一个promise和一个值做为参数的抽象过程，可表示为[[Resolve]](promise, x). 过程如下：
+> 1. 如果promise 和 x 指向相同的值, 使用 TypeError做为原因将promise拒绝。
+2. 如果 x 是一个promise, 采用其状态  
+　　如果x是pending状态，promise必须保持pending走到x fulfilled或rejected.  
+　　如果x是fulfilled状态，将x的值用于fulfill promise.  
+　　如果x是rejected状态, 将x的原因用于reject promise..  
+3. 如果 then 是一个函数， 以x为this调用then函数， 且第一个参数是resolvePromise，第二个参数是rejectPromise，且：  
+　　当 resolvePromise 被以 y为参数调用, 执行 [[Resolve]](promise, y).  
+　　当 rejectPromise 被以 r 为参数调用, 则以r为原因将promise拒绝。  
+　　如果 resolvePromise 和 rejectPromise 都被调用了，或者被调用了多次，则只第一次有效，后面的忽略。  
+　　如果在调用then时抛出了异常，则：  
+　　　如果 resolvePromise 或 rejectPromise 已经被调用了，则忽略它。  
+　　　否则, 以e为reason将 promise 拒绝。  
+　　如果 then不是一个函数，则 以x为值fulfill promise。  
+4. 如果 x 不是对象也不是函数，则以x为值 fulfill promise。  
+
 ### 作用
 > 1. 能够帮助我们控制代码的流程，避免函数的多层嵌套[实例参考][1]
 2. 解决了异步函数中实现同步的特征，它能够实现函数的返回与异常的抛出（冒泡直到被捕获）。
