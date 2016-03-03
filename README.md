@@ -87,4 +87,4 @@ http://www.ituring.com.cn/article/66566
 
 [1]: https://segmentfault.com/a/1190000000684654#articleHeader1
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
-[3]: https://github.com/lm-JS/js-promise/kk.png
+[3]: https://github.com/lm-JS/js-promise/blob/master/kk.png
