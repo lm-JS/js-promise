@@ -29,10 +29,10 @@
 > jQuery规定，deferred对象有三种执行状态----未完成，已完成和已失败。如果执行状态是"已完成"（resolved）,deferred对象立刻调用done()方法指定的回调函数；如果执行状态是"已失败"，调用fail()方法指定的回调函数；如果执行状态是"未完成"，则继续等待，或者调用progress()方法指定的回调函数;例如：
 
      var dtd = $.Deferred(); // 新建一个deferred对象
-  　　  var wait = function(dtd){
-  　　　var tasks = function(){
-  　　　　　　alert("执行完毕！");
-  　　　　　　dtd.resolve(); // 改变deferred对象的执行状态
+     var wait = function(dtd){
+     　var tasks = function(){
+     　      alert("执行完毕！");
+            dtd.resolve(); // 改变deferred对象的执行状态
           //dtd.reject(); // 改变Deferred对象的执行状态
   　　　};
   　　　setTimeout(tasks,5000);
