@@ -8,7 +8,7 @@
 
 ## 实例：
 
-   //ajax操作的链式写法
+    //ajax操作的链式写法
     $.ajax("test.html")
     .done(function(){ alert("哈哈，成功了！"); })
     .fail(function(){ alert("出错啦！"); });
